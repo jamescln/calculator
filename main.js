@@ -1,3 +1,6 @@
+// global varibales
+const calcBtns = document.querySelectorAll(".number-button");
+
 // calculation functions
 
 const addNumbers = function (num1, num2) {
@@ -31,3 +34,7 @@ const operate = function (operator, num1, num2) {
   }
   return result;
 };
+
+calcBtns.forEach((calcBtns) =>
+  calcBtns.addEventListener("click", (e) => console.log(e.target.textContent))
+);
