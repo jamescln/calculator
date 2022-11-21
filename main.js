@@ -6,6 +6,7 @@ let numA = "";
 let numB = "";
 let operator = "";
 let operatorPresent = false;
+let calculationComplete = false;
 
 let currentDisplay = "";
 
@@ -23,7 +24,7 @@ const multiplyNumbers = function (num1, num2) {
   return Number(num1) * Number(num2);
 };
 
-const divideNumbers = function () {
+const divideNumbers = function (num1, num2) {
   return Number(num1) / Number(num2);
 };
 
@@ -69,8 +70,13 @@ calcBtns.forEach((calcBtns) =>
       numB = "";
       operator = "";
       operatorPresent = false;
+      calculationComplete = true;
     } else {
       if (operatorPresent === false) {
+        if (calculationComplete === true) {
+          numA = "";
+          calculationComplete = false;
+        }
         numA += e.target.textContent;
       } else {
         numB += e.target.textContent;
