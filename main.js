@@ -67,7 +67,10 @@ calcBtns.forEach((calcBtns) =>
         operator = e.target.textContent;
         operatorPresent = true;
       } else {
-        return;
+        numA = operate(operator, numA, numB);
+        numB = "";
+        operator = e.target.textContent;
+        calculationComplete = true;
       }
     } else if (e.target.textContent === "=") {
       numA = operate(operator, numA, numB);
