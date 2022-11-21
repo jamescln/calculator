@@ -73,6 +73,9 @@ calcBtns.forEach((calcBtns) =>
         calculationComplete = true;
       }
     } else if (e.target.textContent === "=") {
+      if (numA === "" || numB === "" || operator === "") {
+        return;
+      }
       numA = operate(operator, numA, numB);
       numB = "";
       operator = "";
