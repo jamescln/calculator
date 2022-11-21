@@ -1,5 +1,8 @@
 // global varibales
 const calcBtns = document.querySelectorAll(".number-button");
+const screen = document.querySelector(".screen");
+
+let currentCalculation = "";
 
 // calculation functions
 
@@ -35,6 +38,17 @@ const operate = function (operator, num1, num2) {
   return result;
 };
 
+// dom manipulation & events
+
 calcBtns.forEach((calcBtns) =>
-  calcBtns.addEventListener("click", (e) => console.log(e.target.textContent))
+  calcBtns.addEventListener("click", (e) => {
+    if (e.target.textContent === "CE") {
+      currentCalculation = "";
+    } else {
+      currentCalculation += e.target.textContent;
+    }
+    screen.textContent = currentCalculation;
+  })
 );
+
+screen.textContent = currentCalculation;
