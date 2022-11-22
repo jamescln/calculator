@@ -63,14 +63,16 @@ calcBtns.forEach((calcBtns) =>
       e.target.textContent === "-" ||
       e.target.textContent === "+"
     ) {
-      if (operatorPresent === false) {
+      if (operatorPresent === false && numA !== "") {
         operator = e.target.textContent;
         operatorPresent = true;
-      } else {
+      } else if (numA !== "") {
         numA = operate(operator, numA, numB);
         numB = "";
         operator = e.target.textContent;
         calculationComplete = true;
+      } else {
+        return;
       }
     } else if (e.target.textContent === "=") {
       if (numA === "" || numB === "" || operator === "") {
