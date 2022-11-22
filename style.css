@@ -17,6 +17,17 @@
   flex-direction: column;
   height: 80vh;
   width: 40vw;
+  min-width: 500px;
+  transition: ease-in-out 0.2s;
+}
+
+@media (max-width: 675px) {
+  .calculator-container {
+    width: 100vw;
+    height: 100vh;
+    min-width: 0px;
+    transition: ease-in-out 0.3s;
+  }
 }
 
 button {
